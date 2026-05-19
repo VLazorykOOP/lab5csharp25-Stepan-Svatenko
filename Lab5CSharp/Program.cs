@@ -1,58 +1,37 @@
-﻿// See https://aka.ms/new-console-template for more information
-/// <summary>
-///  Top-level statements 
-///  Код програми (оператори)  вищого рівня
-/// </summary>
-///
-Console.WriteLine("Lab5 C# ");
-AnyFunc();
+﻿using Lab5Ships2;
+using Lab5Ships1;
+using Lab5Persona;
+using Lab5Cars;
 
-/// <summary>
-/// 
-///  Top-level statements must precede namespace and type declarations.
-/// At the top-level methods/functions can be defined and used
-/// На верхньому рівні можна визначати та використовувати методи/функції
-/// </summary>
-void AnyFunc()
+namespace Lab5CSharp
 {
-    Console.WriteLine(" Some function in top-level");
-}
-Console.WriteLine("Problems 1 ");
-AnyFunc();
-//  приклад класів
-UserClass cl = new UserClass();
-cl.Name = " UserClass top-level ";
-User.UserClass cl2 = new();
-cl2.Name = " UserClass namespace User ";
-
-
-
-
-/// <summary>
-/// 
-/// Top-level statements must precede namespace and type declarations.
-/// Оператори верхнього рівня мають передувати оголошенням простору імен і типу.
-/// Створення класу(ів) або оголошенням простору імен є закіченням  іструкцій верхнього рівня
-/// 
-/// </summary>
-
-namespace User
-{
-    class UserClass
+    internal class Program
     {
-        public string Name { get; set; }
-       public  UserClass()
+        static void Main(string[] args)
         {
-            Name = "NoName";
-        }
-        UserClass(string n)
-        {
-            Name = n;
+            Console.WriteLine("Lab 4 CSharp");
+            // int n = Convert.ToInt32(Console.ReadLine());
+            int n = 0;
+            do
+            {
+                Console.WriteLine("Enter number of task: ");
+                n = Convert.ToInt32(Console.ReadLine());
+                switch (n)
+                {
+                    case 1:
+                        Boats1.testboats1();
+                        break;
+                    case 2:
+                        Boats2.testboats2();
+                        break;
+                    case 3:
+                        PersonTest.personatest();
+                        break;
+                    case 4:
+                        CarTest.Cartest();
+                        break;
+                }
+            } while (n != 0);
         }
     }
-
-}
-class UserClass
-{
-    public string Name { get; set; }
 }
